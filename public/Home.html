@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+
+    </head>
+
+    <body>
+        <h1>
+            Well done on the login
+        </h1>
+
+        <script src="js/Login.js"></script>
+ <script>
+     firebase.auth().onAuthStateChanged(function(user)
+     {
+        if(user)
+        {
+            window.location.href = "Login.html";
+        }
+     });
+ </script>
+
+ <div class = "w-full text-center" style="margin-bottom: 10%; font-size: 15px;">
+    <a href="DiscussionBoard.html" class="text-dark">
+        Dicussion test
+    </a>
+      </div>
+
+      <div class = "w-full text-center" style="margin-bottom: 10%; font-size: 15px;">
+        <a href="SellGame.html" class="text-dark">
+           sell Games test
+        </a>
+          </div>
+
+          <div class = "w-full text-center" style="margin-bottom: 10%; font-size: 15px;">
+            <a href="Home.html" class="text-dark">
+                home test
+            </a>
+              </div>
+    </body>
+    </html>
+    
