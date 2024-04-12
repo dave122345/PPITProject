@@ -1,14 +1,18 @@
 // index.js
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import App from './App';
-import navbar from './components/Layout/navbar'
+import Navbar from './components/Layout/navbar'
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
- <React.StrictMode>
-    <BrowserRouter>
-       <App />
-    </BrowserRouter>
- </React.StrictMode>
+ <Router>
+   <div>
+      <Navbar />
+      <Routes>
+         <Route path="/" exact Component={App} />
+      </Routes>
+   </div>
+ </Router>
 );

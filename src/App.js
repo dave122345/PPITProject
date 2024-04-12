@@ -1,10 +1,9 @@
   
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import navbar from './components/Layout/navbar'
+import { Routes, BrowserRouter } from 'react-router-dom';
+import Navbar from './components/Layout/navbar'
 import Nav from 'react-bootstrap/Nav'
-import Navbar from 'react-bootstrap/Navbar'
 import Button from 'react-bootstrap/Button'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import Form from 'react-bootstrap/Form'
@@ -15,7 +14,7 @@ class App extends Component {
     return (
     
       <BrowserRouter>
-            <div className="App">          
+            <div className="output">          
             <Navbar bg="light" expand="lg">
             <Navbar.Brand href="#home">Selling games.com</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
