@@ -1,2 +1,0 @@
-# PPITProject
-PPIT Project Repo
