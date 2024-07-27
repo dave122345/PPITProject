@@ -16,3 +16,17 @@
     margin-bottom: 10px;
     
 }
+#games .thumbnail{
+    width: 300px;
+    height:400px;
+    background: rgb(168, 241, 71);
+    margin:5px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #00000033;
+
+}
+
+#games{
+    display: flex;
+   
+}
