@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import navbar from "./components/Layout/navbar"
+import navbar from "./components/_oldLayout/navbar"
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import Button from 'react-bootstrap/Button'
@@ -42,9 +42,9 @@ class App extends Component {
         </Navbar>
 
         test
-          <Switch>
+          {/* <Switch>
 
-            </Switch>
+            </Switch> */}
       </div>
       </BrowserRouter>
     );

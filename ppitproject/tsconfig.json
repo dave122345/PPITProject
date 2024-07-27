@@ -32,11 +32,11 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/components/Layout/navbar.js",
-    "src/app/components/Pages/SellingPage.js",
-    "src/app/components/Pages/Login.js",
-    "src/app/components/Pages/index.js",
-    "src/app/components/Pages/DiscussionBoard.js"
+    "src/app/components/_oldLayout/navbar.js",
+    "src/app/components/_oldPages/SellingPage.js",
+    "src/app/components/_oldPages/Login.js",
+    "src/app/components/_oldPages/index.js",
+    "src/app/components/_oldPages/DiscussionBoard.js"
   ],
   "exclude": [
     "node_modules"
