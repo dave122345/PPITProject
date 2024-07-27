@@ -1,6 +1,12 @@
 {
   "dependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "next": "^14.2.5",
+    "node": "^20.16.0",
     "nodemon": "^3.1.4",
-    "react-bootstrap": "^2.10.4"
+    "react": "^18.3.1",
+    "react-bootstrap": "^2.10.4",
+    "react-dom": "^18.3.1"
   }
 }
