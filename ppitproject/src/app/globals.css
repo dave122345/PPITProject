@@ -23,7 +23,8 @@
     margin:5px;
     border-radius: 20px;
     box-shadow: 0 0 10px #00000033;
-
+    display: flex;
+    flex-direction: column;
 }
 
 #games{

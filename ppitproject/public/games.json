@@ -1,0 +1,78 @@
+[{
+    "title": "GTA6",
+    "description": "Grand Theft Auto VI is an action-adventure video game developed by Rockstar North and published by Rockstar Games. It is the sequel to 2013's Grand Theft Auto V. The game is set within the fictional state of San Andreas, which is based on Southern California, affording the player free roam over the world's countryside and the fictional city of Los Santos, which is based on Los Angeles.",
+    "short_description": "GTA6 is an action-adventure video game developed by Rockstar North and published by Rockstar Games.",
+    "image": "gta6.png",
+    "price": 60
+
+   
+},
+{
+    "title": "FIFA 22",
+    "description": "FIFA 22 is a football simulation video game published by Electronic Arts as part of the FIFA series. It is the 29th installment in the FIFA series, and was released on 1 October 2021 for Microsoft Windows, Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X and Series S.",
+    "short_description":"fifa 22 is a football game by EA sports",
+    "image": "fifa22.png",
+    "price": 70
+},
+{
+    "title": "The Witcher 3: Wild Hunt",
+    "description": "The Witcher 3: Wild Hunt is an action role-playing game developed and published by CD Projekt. It is the third main installment in The Witcher series, and was released worldwide for Microsoft Windows, PlayStation 4, and Xbox One on 19 May 2015.",
+    "short_description":"The Witcher 3: Wild Hunt is an action role-playing game developed and published by CD Projekt.",
+    "image": "witcher3.png",
+    "price": 40
+},
+{
+    "title": "Minecraft",
+    "description": "Minecraft is a sandbox video game developed by Mojang Studios. In Minecraft, players explore a blocky, procedurally-generated 3D world with infinite terrain, and may discover and extract raw materials, craft tools and items, and build structures or earthworks.",
+    "short_description":"Minecraft is a sandbox video game developed by Mojang Studios.",
+    "image": "minecraft.png",
+    "price": 20
+},
+{
+    "title": "The Legend of Zelda: Breath of the Wild",
+    "description": "The Legend of Zelda: Breath of the Wild is an action-adventure game developed and published by Nintendo. It is the 19th main installment in The Legend of Zelda series, and was released worldwide for the Nintendo Switch and Wii U consoles on March 3, 2017.",
+    "short_description":"The Legend of Zelda: Breath of the Wild is an action-adventure game developed and published by Nintendo.",
+    "image": "zelda.png",
+    "price": 60
+},
+{
+    "title": "Call of Duty: Warzone",
+    "description": "Call of Duty: Warzone is a free-to-play battle royale video game released on March 10, 2020, for PlayStation 4, PlayStation 5, Xbox One, Xbox Series X/S, and Microsoft Windows. The game is a part of the 2019 title Call of Duty: Modern Warfare, but does not require purchase of it.",
+    "image": "warzone.png",
+    "price": 0
+},
+{
+    "title": "Assassin's Creed Valhalla",
+    "description": "Assassin's Creed Valhalla is an action role-playing video game developed by Ubisoft Montreal and published by Ubisoft. It is the twelfth major installment and the twenty-second release in the Assassin's Creed series, and a successor to the 2018 game Assassin's Creed Odyssey.",
+    "short_description":"Assassin's Creed Valhalla is an action role-playing video game developed by Ubisoft Montreal and published by Ubisoft.",
+    "image": "valhalla.png",
+    "price": 50
+},
+{
+    "title": "Red Dead Redemption 2",
+    "description": "Red Dead Redemption 2 is an action-adventure game developed and published by Rockstar Games. It is the third entry in the Red Dead series and a prequel to the 2010 game Red Dead Redemption. The game is set in an open world environment and follows outlaw Arthur Morgan, a member of the Van der Linde gang.",
+    "short_description":"Red Dead Redemption 2 is an action-adventure game developed and published by Rockstar Games.",
+    "image": "reddead2.png",
+    "price": 60
+},
+{
+    "title": "Overwatch",
+    "description": "Overwatch is a team-based multiplayer first-person shooter developed and published by Blizzard Entertainment. It was released in May 2016 for Windows, PlayStation 4, and Xbox One. Overwatch assigns players into two teams of six, with each player selecting from a roster of over 30 characters, known as heroes.",
+    "short_description":"Overwatch is a team-based multiplayer first-person shooter developed and published by Blizzard Entertainment.",
+    "image": "overwatch.png",
+    "price": 40
+},
+{
+    "title": "Super Mario Odyssey",
+    "description": "Super Mario Odyssey is a platform game developed and published by Nintendo for the Nintendo Switch. It is a Super Mario game that follows Mario and Cappy, a spirit that turns into Mario's hat and allows him to possess other characters and objects, as they journey across various worlds to save Princess Peach from his nemesis Bowser.",
+    "short_description":"Super Mario Odyssey is a platform game developed and published by Nintendo for the Nintendo Switch.",
+    "image": "marioodyssey.png",
+    "price": 50
+},
+{
+    "title": "Fortnite",
+    "description": "Fortnite is a free-to-play battle royale game developed and published by Epic Games. It was released in 2017 and is available on multiple platforms including Windows, macOS, Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X/S, iOS, and Android. In Fortnite, players fight against each other to be the last person standing.",
+    "short_description":"Fortnite is a free-to-play battle royale game developed and published by Epic Games.",
+    "image": "fortnite.png",
+    "price": 0
+}]
