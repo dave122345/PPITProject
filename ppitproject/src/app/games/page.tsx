@@ -7,7 +7,7 @@ export default function Games() {
    useEffect(() => {
 
     (async () => {
-        const response = await axios.get('http://localhost:3000/games.json')
+        const response = await axios.get('http://localhost:3001/games')
         setGames(response.data);
 
 
@@ -34,7 +34,6 @@ export default function Games() {
         <div className='thumbnail'></div>
         <div className='thumbnail'></div> */}
        
-   
     </div>
 </div>
 
