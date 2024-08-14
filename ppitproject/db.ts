@@ -14,5 +14,5 @@ const dbConfig = {
 }
 
 const db = mysql.createPool(dbConfig)
-export {db}
+export {db, dbConfig}
   
