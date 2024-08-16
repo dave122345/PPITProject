@@ -44,7 +44,7 @@ if(req.body.password !== req.body.password_confirmation) {
     password: req.body.password,
 
   })
-  res.send('ok');
+  res.send({success: true});
 
 
 });
