@@ -32,6 +32,20 @@ app.get('/games', async (req, res) => {
     res.send(rows);
 });
 
+app.post('/api/login', async (req, res) => {
+  const [rows] = await db.query<any>(`select * from users where username = :username and password = :password;`, {
+    username: req.body.username,
+    password: req.body.password,
+  })
+  if(rows.length === 0) {
+    res.send({error: 'invalid username or password'});
+    return;
+  }
+  req.session.userId = rows[0].id;
+  res.send({success: true});
+
+
+});
 app.post('/api/signup', async (req, res) => {
   console.log(req.body);
 if(req.body.password !== req.body.password_confirmation) {
