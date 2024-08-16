@@ -59,11 +59,27 @@ app.get('/api/user', async (req, res) => {
 });
 
 app.post('/api/signup', async (req, res) => {
+
   console.log(req.body);
-if(req.body.password !== req.body.password_confirmation) {
-    res.send({error: 'passwords do not match'})
+  if (req.body.password !== req.body.password_confirmation) {
+    res.send({ error: 'passwords do not match' })
     return;
   }
+  if (!req.body.password) {
+    res.send({ error: 'password cannot be empty' })
+    return;
+  }
+  if (!req.body.username) {
+    res.send({ error: 'username cannot be empty' })
+    return;
+  }
+  if (!req.body.email) {
+    res.send({ error: 'email cannot be empty' })
+    return;
+  }
+  
+  
+
   await db.query(`insert into users (email, username, password) values (:email, :username, :password);`, {
     email: req.body.email,
     username: req.body.username,
