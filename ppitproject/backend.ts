@@ -3,6 +3,7 @@ import cors from 'cors';
 import session from 'express-session'
 import expressMysqlSession from 'express-mysql-session'
 import { db, dbConfig } from './db';
+import httpProxy from 'http-proxy'
 
 const MySQLSessionStore = expressMysqlSession(session)
 const sessionStore = new MySQLSessionStore(dbConfig)
@@ -22,10 +23,6 @@ app.use(session({
 }))
 
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-
-});
 
 app.get('/games', async (req, res) => {
     const [rows] = await db.query(`select * from games;`)
@@ -75,8 +72,18 @@ if(req.body.password !== req.body.password_confirmation) {
 
 });
 
+const proxy = httpProxy.createProxyServer({
+  Headers: {},
+  target: {host: 'localhost', port: 3000, },
+});
+
+app.use('/', (req, res) => {
+  delete req.headers.origin
+  proxy.web(req, res)
+});
+
 app.listen(3001, () => {
   console.log('backend running on: http://localhost:3001')
 
- });
+});
 
