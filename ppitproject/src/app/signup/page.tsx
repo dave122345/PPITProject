@@ -24,7 +24,7 @@ export default function Signup() {
         }
     }
     return <div id='signup'>
-        {!response?.success && <p>{response?.message}</p> }
+        {response?.error && <p>{response?.error}</p> }
 
         <form onSubmit={onSubmit}>
             <label>Please enter a Email</label>
