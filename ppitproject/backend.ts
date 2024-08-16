@@ -40,6 +40,8 @@ if(req.body.password !== req.body.password_confirmation) {
   }
   await db.query(`insert into users (email, username, password) values (:email, :username, :password);`, {
     email: req.body.email,
+    username: req.body.username,
+    password: req.body.password,
 
   })
   res.send('ok');
