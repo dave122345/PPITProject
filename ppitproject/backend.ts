@@ -43,7 +43,10 @@ app.post('/api/login', async (req, res) => {
 
 
 });
-
+app.post('/api/logout', async (req, res) => {
+  req.session.userId = null;
+  res.end();
+});
 app.get('/api/user', async (req, res) => {
   if(!req.session.userId) {
     res.send(null);
