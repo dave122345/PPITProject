@@ -34,6 +34,10 @@ app.get('/games', async (req, res) => {
 
 app.post('/api/signup', async (req, res) => {
   console.log(req.body);
+if(req.body.password !== req.body.password_confirmation) {
+    res.send({error: 'passwords do not match'})
+    return;
+  }
   await db.query(`insert into users (email, username, password) values (:email, :username, :password);`, {
     email: req.body.email,
 
