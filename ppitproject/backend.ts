@@ -46,6 +46,18 @@ app.post('/api/login', async (req, res) => {
 
 
 });
+
+app.get('/api/user', async (req, res) => {
+  if(!req.session.userId) {
+    res.send(null);
+    return;
+  }
+  const [rows] = await db.query(`select id, username, email from users where id = :id;`, {
+    id: req.session.userId,
+  })
+  res.send(rows[0]);
+});
+
 app.post('/api/signup', async (req, res) => {
   console.log(req.body);
 if(req.body.password !== req.body.password_confirmation) {
