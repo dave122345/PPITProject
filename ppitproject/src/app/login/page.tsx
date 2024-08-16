@@ -28,7 +28,8 @@ export default function Login() {
 
     }
     return <div id='login'>
-        
+        {response?.error && <p>{response?.error}</p> }
+
         <form onSubmit={onSubmit}>
            <label>username</label>
             <input type="text" name="username" placeholder="Username"/>
