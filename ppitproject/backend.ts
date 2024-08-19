@@ -29,17 +29,27 @@ app.get('/games', async (req, res) => {
 });
 
 app.post('/api/login', async (req, res) => {
-  const [rows] = await db.query<any>(`select * from users where username = :username and password = :password;`, {
+  const [[user]] = await db.query<any>(`select password from users where username = :username;`, {
     username: req.body.username,
-    password: req.body.password,
   })
-  if(rows.length === 0) {
+
+  if (!user) {
+    res.send({error: 'invalid username'});
+    return;
+  }
+  
+  if(await bcrypt.compare(req.body.password, user.password)) {
+    const [rows] = await db.query<any>(`select id from users where username = :username;`, {
+      username: req.body.username,
+    })
+    req.session.userId = rows[0].id;
+    res.send({success: true});
+  } else {
     res.send({error: 'invalid username or password'});
     return;
   }
-  req.session.userId = rows[0].id;
-  res.send({success: true});
 });
+
 app.post('/api/logout', async (req, res) => {
   req.session.userId = null;
   res.end();
