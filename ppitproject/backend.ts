@@ -23,9 +23,32 @@ app.use(session({
     store: sessionStore,
 }))
 
-app.get('/games', async (req, res) => {
+app.get('/api/games', async (req, res) => {
     const [rows] = await db.query(`select * from games;`)
     res.send(rows);
+});
+
+app.get('/api/cart', async (req, res) => {
+  if (!req.session.userId) {
+    res.send({error: 'not logged in'});
+    return;
+  }
+  const [rows] = await db.query(`select games.* from cart join games on games.id = cart.game_id where cart.user_id = :user_id;`, {
+    user_id: req.session.userId,
+  })
+  res.send(rows);
+});
+
+app.delete('/api/cart/:gameId', async (req, res) => {
+  if (!req.session.userId) {
+    res.send({error: 'not logged in'});
+    return;
+  }
+  await db.query(`delete from cart where user_id = :user_id and game_id = :game_id;`, {
+    user_id: req.session.userId,
+    game_id: req.params.gameId,
+  })
+  res.send({success: true});
 });
 
 app.post('/api/cart', async (req, res) => {
