@@ -25,9 +25,14 @@
     box-shadow: 0 0 10px #00000033;
     display: flex;
     flex-direction: column;
+    padding: 10px;
 }
 
 #games{
     display: flex;
-   
+}  
+
+.add-to-cart{
+    margin-top: auto;
+
 }

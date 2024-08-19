@@ -28,6 +28,18 @@ app.get('/games', async (req, res) => {
     res.send(rows);
 });
 
+app.post('/api/cart', async (req, res) => {
+  if (!req.session.userId) {
+    res.send({error: 'not logged in'});
+    return;
+  }
+  await db.query(`insert into cart (user_id, game_id) values (:user_id, :game_id);`, {
+    user_id: req.session.userId,
+    game_id: req.body.gameId,
+  })
+  res.send({success: true});
+});
+
 app.post('/api/login', async (req, res) => {
   const [[user]] = await db.query<any>(`select password from users where username = :username;`, {
     username: req.body.username,
