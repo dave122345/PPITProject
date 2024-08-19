@@ -17,14 +17,13 @@ export function Navbar() {
         <a href='/'>Home</a>
         <a href='/games'>Games</a>
         <a href='/cart'>Cart</a>
-      { !user &&   <a href='/login'>Log-in</a>}
-      { user &&  <LogoutButton />}
-      { !user &&  <a href='/signup'>Sign Up</a>}
-        
-        {user && <div>
-            <span>Logged in as: </span>
-            <span>{user.username}</span>
-        </div>}
+     
+         <div className='username'>
+            { !user &&   <a href='/login'>Log-in</a>}
+            { !user &&  <a href='/signup'>Sign Up</a>}
+            { user && <span>{user.username}</span> }
+            { user &&  <LogoutButton />}
+        </div>
     </div> 
     
     
