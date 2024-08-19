@@ -4,6 +4,7 @@ import session from 'express-session'
 import expressMysqlSession from 'express-mysql-session'
 import { db, dbConfig } from './db';
 import httpProxy from 'http-proxy'
+import bcrypt from 'bcrypt';
 
 const MySQLSessionStore = expressMysqlSession(session)
 const sessionStore = new MySQLSessionStore(dbConfig)
@@ -22,8 +23,6 @@ app.use(session({
     store: sessionStore,
 }))
 
-
-
 app.get('/games', async (req, res) => {
     const [rows] = await db.query(`select * from games;`)
     res.send(rows);
@@ -40,8 +39,6 @@ app.post('/api/login', async (req, res) => {
   }
   req.session.userId = rows[0].id;
   res.send({success: true});
-
-
 });
 app.post('/api/logout', async (req, res) => {
   req.session.userId = null;
@@ -78,17 +75,13 @@ app.post('/api/signup', async (req, res) => {
     return;
   }
   
-  
-
+  const hashedPassword = await bcrypt.hash(req.body.password, 10);
   await db.query(`insert into users (email, username, password) values (:email, :username, :password);`, {
     email: req.body.email,
     username: req.body.username,
-    password: req.body.password,
-
+    password: hashedPassword,
   })
   res.send({success: true});
-
-
 });
 
 const proxy = httpProxy.createProxyServer({
