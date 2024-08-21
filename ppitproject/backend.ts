@@ -142,5 +142,7 @@ app.use('/', (req, res) => {
 app.listen(3001, () => {
   console.log('backend running on: http://localhost:3001')
 
-});
+}).on('upgrade', (req, socket, head) => {
+  proxy.ws(req, socket, head)
+})
 
