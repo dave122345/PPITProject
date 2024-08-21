@@ -15,8 +15,11 @@ export default function Games() {
    async function onClickAddToCart(gameId) {
     await axios.post('/api/cart', {gameId});
     
+   const {data} = await axios.post('/api/cart', {gameId});
+    if(data.error){
+         alert(data.error);
    }
-   
+}
    return  <div>
   
    <div className="title">
