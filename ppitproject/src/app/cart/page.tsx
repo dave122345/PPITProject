@@ -32,21 +32,19 @@ export default function Games() {
 
         {games.map((game) => {
 
-            return <div className='thumbnail'>
-             <span className='game-title'>{game.title}</span>
-             <span className='game-description'>{game.short_description}</span>
-             <button className='add-to-cart' onClick={() => onClickRemoveFromCart(game.id)} >Remove From Cart</button>
+            return <div className='card'>
+                    <span className='game-title'>{game.title}</span>
+                    <span className='game-description'>{game.short_description}</span>
+                    <button className='add-to-cart' onClick={() => onClickRemoveFromCart(game.id)} >Remove From Cart</button>
+
              </div>
         })}
 
     
-        {/* <div className='thumbnail'></div>
-        <div className='thumbnail'></div>
-        <div className='thumbnail'></div> */}
+        {/* <div className='card'></div>
+        <div className='card'></div>
+        <div className='card'></div> */}
        
-    </div>
+    </div>}
 </div>
-
-
-
 }
