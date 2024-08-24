@@ -1,5 +1,6 @@
 'use client'
 import axios from 'axios';
+import Link from 'next/link';
 import React, { use, useEffect, useState } from 'react';
 
 export default function Games() {
@@ -13,8 +14,7 @@ export default function Games() {
    }, []);
 
    async function onClickAddToCart(gameId) {
-    await axios.post('/api/cart', {gameId});
-    
+   
    const {data} = await axios.post('/api/cart', {gameId});
     if(data.error){
          alert(data.error);
@@ -29,17 +29,23 @@ export default function Games() {
      <div id='games'>
         {games.map((game) => {
 
-            return <div className='thumbnail'>
-             <span className='game-title'>{game.title}</span>
-             <span className='game-description'>{game.short_description}</span>
-             <button className='add-to-cart' onClick={() => onClickAddToCart(game.id)} >Add to cart</button>
+       return <div className='game-card' key={game.id} >
+        <Link href={`/games/${game.id}`}>
+            <img src={`/images/${game.image}`} alt={game.title} />
+            <div className='content'>
+                <span className='game-title'>{game.title}</span>
+                {/* <span className='game-description'>{game.short_description}</span> */}
+                <span className='game-price'>€{game.price}</span>
+                <button className='add-to-cart' onClick={() => onClickAddToCart(game.id)} >Add to cart</button>
+            </div>
+            </Link> 
              </div>
         })}
 
     
-        {/* <div className='thumbnail'></div>
-        <div className='thumbnail'></div>
-        <div className='thumbnail'></div> */}
+        {/* <div className='card'></div>
+        <div className='card'></div>
+        <div className='card'></div> */}
        
     </div>
 </div>
