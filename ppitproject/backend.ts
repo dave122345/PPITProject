@@ -27,7 +27,12 @@ app.get('/api/games', async (req, res) => {
     const [rows] = await db.query(`select * from games;`)
     res.send(rows);
 });
+//select * from games where id=5
+app.get('/api/games/:gameId', async (req, res) => {
+  const [[game]] = await db.query<any>(`select * from games where id = :gameId;`, {gameId: req.params.gameId})
+  res.send(game);
 
+});
 app.get('/api/cart', async (req, res) => {
   if (!req.session.userId) {
     res.send({error: 'not logged in'});
