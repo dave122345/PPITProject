@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link"
 import { useState, useEffect } from "react"
 import axios from "axios"
 import { LogoutButton } from "./LogoutButton"
@@ -14,13 +15,13 @@ export function Navbar() {
     }, [])
 
     return <div id='navbar'>
-        <a href='/'>Home</a>
-        <a href='/games'>Games</a>
-        <a href='/cart'>Cart</a>
+        <Link href='/'>Home</Link>
+        <Link href='/games'>Games</Link>
+        <Link href='/cart'>Cart</Link>
      
          <div className='username'>
-            { !user &&   <a href='/login'>Log-in</a>}
-            { !user &&  <a href='/signup'>Sign Up</a>}
+            { !user &&   <Link href='/login'>Log-in</Link>}
+            { !user &&  <Link href='/signup'>Sign Up</Link>}
             { user && <span>{user.username}</span> }
             { user &&  <LogoutButton />}
         </div>
