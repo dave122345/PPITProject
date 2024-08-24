@@ -25,7 +25,11 @@ export default function Games() {
    
     <h1>Cart</h1>
     </div>
-     <div id='games'>
+    {games.error &&  <div className='error'>
+        <span>{games.error}</span>
+    </div>}
+     {!!games.length && <div id='games'>
+
         {games.map((game) => {
 
             return <div className='thumbnail'>
