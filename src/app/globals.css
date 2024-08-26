@@ -2,6 +2,8 @@ body{
     
     font-family: Helvetica;
     background: #f4f4f4;
+    padding: 10px;
+    background-color: #f7bac0;
 }
 
 .row{
@@ -15,10 +17,13 @@ a:link, a:visited {
 
 
 #navbar {
-    margin: 5px; 
+    padding: 5px;
     display: flex;
     font-family: Arial, Helvetica, sans-serif;
-    border: rgb(145, 145, 145) 1px solid;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background: white;
 }
 
 
@@ -28,9 +33,7 @@ a:link, a:visited {
     text-decoration: none;
     color: #000;
     font-weight: bold;
-
 }
-
 
 
 #navbar a:hover {
@@ -40,6 +43,15 @@ a:link, a:visited {
 #navbar .username {
     margin-left: auto;
     font-weight: normal;
+}
+
+.user-icon {
+    color: #444;
+    height: 20px;
+    top: 4px;
+    right: 4px;
+    position: relative;
+
 }
 
 #navbar .active {
@@ -52,13 +64,12 @@ a:link, a:visited {
     width: 200px;
     background: #d89bdf;
     padding: 30px;
-
 }
 
 #login input,  #signup input {
     margin-bottom: 10px;
-    
 }
+
 #games .game-card {
     min-width: 300px;
     max-width: 300px;
@@ -69,8 +80,8 @@ a:link, a:visited {
     box-shadow: 0 0 10px #00000033;
     display: flex;
     flex-direction: column;
-    
 }
+
 #games .game-card img {
     width: 100%;
     height: 400px;
@@ -123,6 +134,12 @@ a:link, a:visited {
     border-radius: 5px;
 }
 
+.add-to-cart svg {
+    position: relative;
+    top: 4px;
+    left: 4px;
+}
+
 .error {
     color: red;
     font-weight: bold;
@@ -132,9 +149,10 @@ a:link, a:visited {
 }
 
 #game-page {
-    border: solid 1px #000;
     padding: 20px;
-
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background: white;
 
 }
 
@@ -146,7 +164,7 @@ a:link, a:visited {
 
 #game-page img{
     height: 500px;
-
+    border-radius: 10px;
 }
 
 #game-page #left, #game-page #right {
@@ -155,5 +173,4 @@ a:link, a:visited {
 
 #game-page #left {
     margin-right: 20px;
-
 }

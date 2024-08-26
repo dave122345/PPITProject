@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import axios from "axios"
 import { LogoutButton } from "./LogoutButton"
 import { usePathname } from 'next/navigation'
-
+import {  FaCartShopping, FaUser  } from "react-icons/fa6";
 function NavLink({href, children}) {
     const pathname = usePathname()
     const active = pathname == href ? 'active' : ''
@@ -34,8 +34,8 @@ export function Navbar() {
          <div className='username'>
             { !user &&   <NavLink href='/login'>Log-in</NavLink>}
             { !user &&  <NavLink href='/signup'>Sign Up</NavLink>}
-            { user && <span>{user.username}</span> }
-            { user &&  <NavLink href='/cart'>Cart</NavLink>} 
+            { user && <span><FaUser className="user-icon" />{user.username}</span> }
+            { user &&  <NavLink href='/cart'>Cart <FaCartShopping /></NavLink>} 
             { user &&  <LogoutButton />}
         </div>
     </div> 

@@ -19,7 +19,7 @@ import { FaCartPlus } from "react-icons/fa6";
                   {/* <span className='game-description'>{game.short_description}</span> */}
                   <span className='game-price'>€{game.price}</span>
                   <AverageRating gameId={game.id} />
-                  <button className='add-to-cart' onClick={() => onClickAddToCart(game.id)} >Add to cart</button>
+                  <button className='add-to-cart' onClick={() => onClickAddToCart(game.id)} >Add to cart <FaCartPlus /></button>
               </div>
             </Link>
           </div>
