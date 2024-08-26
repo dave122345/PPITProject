@@ -3,15 +3,15 @@ import axios from 'axios';
 import Link from 'next/link';
 import React, { use, useEffect, useState } from 'react';
 import ReactStars from "react-rating-stars-component";
-import { AverageRating } from '../components/AverageRating';
-import { GameList } from '../components/GameList';
+import { AverageRating } from '../../../components/AverageRating';
+import { GameList } from '../../../components/GameList';
 
-export default function Games() {
+export default function Page({ params }) {
     const [games, setGames] = useState<any>([]);
     useEffect(() => {
 
         (async () => {
-            const response = await axios.get('/api/games')
+            const response = await axios.get(`/api/games/category/${params.categoryName}`)
             setGames(response.data);
         })();
     }, []);
@@ -25,7 +25,5 @@ export default function Games() {
     }
 
     return <GameList games={games}  onClickAddToCart={onClickAddToCart} />
-
-
 
 }

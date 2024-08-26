@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "backend": "esno --watch backend.ts",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -12,25 +13,25 @@
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
+    "esno": "^4.7.0",
     "express": "^4.19.2",
     "express-mysql-session": "^3.0.3",
     "express-session": "^1.18.0",
     "http-proxy": "^1.18.1",
     "mysql2": "^3.11.0",
-    "next": "^14.2.5",
+    "next": "^14.2.6",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.4",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.25.1"
+    "react-rating-stars-component": "^2.2.0",
+    "react-router-dom": "^6.26.1"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "^22",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.5",
     "postcss": "^8",
-    "tailwindcss": "^3.4.1",
+    "tailwindcss": "^3.4.10",
     "typescript": "^5"
   }
 }

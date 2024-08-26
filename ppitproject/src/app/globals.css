@@ -4,6 +4,15 @@ body{
     background: #f4f4f4;
 }
 
+.row{
+    display:flex;
+}
+
+a:link, a:visited {
+    color: #000;
+    text-decoration: none;
+}
+
 
 #navbar {
     margin: 5px; 
@@ -31,7 +40,10 @@ body{
 #navbar .username {
     margin-left: auto;
     font-weight: normal;
+}
 
+#navbar .active {
+    text-decoration: underline;
 }
 
 #login form, #signup form {
@@ -50,7 +62,7 @@ body{
 #games .game-card {
     min-width: 300px;
     max-width: 300px;
-    height:550px;
+    height:593px;
     /* background: rgb(168, 241, 71); */
     /* margin:20px; */
     border-radius: 20px;
@@ -90,6 +102,7 @@ body{
     font-weight: bold;
     font-size: 18pt;
     margin-bottom: 5px;
+    min-height: 60px;
 }
 
 .game-price {
@@ -118,3 +131,29 @@ body{
     padding: 20px;
 }
 
+#game-page {
+    border: solid 1px #000;
+    padding: 20px;
+
+
+}
+
+#game-page #game-title {
+    font-size: 24pt;
+    font-weight: bold;
+
+}
+
+#game-page img{
+    height: 500px;
+
+}
+
+#game-page #left, #game-page #right {
+   
+}
+
+#game-page #left {
+    margin-right: 20px;
+
+}
