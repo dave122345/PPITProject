@@ -1,9 +1,9 @@
 'use client'
 import { AverageRating } from '@/app/components/AverageRating';
+import { ReviewForm } from '@/app/components/ReviewForm';
 import { Reviews } from '@/app/components/Reviews';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import ReactStars from "react-rating-stars-component";
 
 
 
@@ -16,11 +16,7 @@ export default function Page({ params }) {
       setGames(response.data);
     })();
   }, []);
-  async function onChangeRating(rating) {
-    const response = await axios.post('/api/ratings/' + params.gameId, {
-      rating
-    })
-  }
+ 
 
   if (!game.rating) {
     return <div>Loading...</div>
@@ -37,21 +33,12 @@ export default function Page({ params }) {
       </div>
     </div>
 
-    <Reviews gameId={params.gameId} />
     {/* average rating */}
     <p>Game overall rating</p>
     <AverageRating gameId={params.gameId} />
 
-    {/* user rating */}
-    <p>Your Rating</p>
-    <ReactStars
-      count={5}
-      value={game.rating}
-      onChange={onChangeRating}
-      size={30}
-      activeColor="#ffd700"
-      isHalf={true}
-    />
+    <Reviews gameId={params.gameId} />
+    <ReviewForm gameId={params.gameId} reviewSubmitted={() => ('')}/>
 
 
   </div>

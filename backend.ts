@@ -51,13 +51,27 @@ app.get('/api/ratings/:gameId', async (req, res) => {
 });
 
 app.get('/api/reviews/:gameId', async (req, res) => {
-  const [rows] = await db.query(`select content, username from reviews
+  const [rows] = await db.query(`select content, username, rating, created_at from reviews
 inner join users on users.id = reviews.user_id  
 where game_id = :gameId;`,
     { gameId: req.params.gameId }
   )
   res.json(rows)
 });
+
+app.post('/api/reviews/:gameId', async (req, res) => {
+  console.log(req.body)
+  await db.query(`
+    insert into reviews (user_id, game_id, content)
+    value (:user_id, :game_id, :content)
+  `, {
+    user_id: req.session.userId,
+    game_id: req.params.gameId,
+    content: req.body.content
+  })
+  res.json({success: true})
+
+})
 
 
 

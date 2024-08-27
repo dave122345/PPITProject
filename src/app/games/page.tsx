@@ -24,8 +24,9 @@ export default function Games() {
         }
     }
 
-    return <GameList games={games}  onClickAddToCart={onClickAddToCart} />
-
-
-
+    return <>
+        <h1 className='title'>Games</h1>
+       
+        <GameList games={games} onClickAddToCart={onClickAddToCart} />
+    </>
 }

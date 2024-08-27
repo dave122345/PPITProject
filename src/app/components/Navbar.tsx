@@ -21,21 +21,22 @@ export function Navbar() {
     }, [])
 
     return <div id='navbar'>
-        <NavLink href='/'>Home</NavLink>
-        <NavLink href='/games'>Games</NavLink>
-        <NavLink href='/games/category/action'>Action</NavLink>
-        <NavLink href='/games/category/rpg'>RPG</NavLink>
-        <NavLink href='/games/category/simulation'>Simulation</NavLink>
-        <NavLink href='/games/category/survival'>Survival</NavLink>
-        <NavLink href='/games/category/sports'>Sports</NavLink>
-        <NavLink href='/games/category/fantasy'>Fantasy</NavLink>
+      
+            <NavLink href='/'>Home</NavLink>
+            <NavLink href='/games'>Games</NavLink>
+            <NavLink href='/games/category/action'>Action</NavLink>
+            <NavLink href='/games/category/rpg'>RPG</NavLink>
+            <NavLink href='/games/category/simulation'>Simulation</NavLink>
+            <NavLink href='/games/category/survival'>Survival</NavLink>
+            <NavLink href='/games/category/sports'>Sports</NavLink>
+            <NavLink href='/games/category/fantasy'>Fantasy</NavLink>
+       
      
-     
-         <div className='username'>
+         <div className='user-actions'>
             { !user &&   <NavLink href='/login'>Log-in</NavLink>}
             { !user &&  <NavLink href='/signup'>Sign Up</NavLink>}
-            { user && <span><FaUser className="user-icon" />{user.username}</span> }
-            { user &&  <NavLink href='/cart'>Cart <FaCartShopping /></NavLink>} 
+            { user && <a className="username"><FaUser className="user-icon" />{user.username}</a> }
+            { user &&  <NavLink href='/cart'>Cart <FaCartShopping className='cart-icon'/></NavLink>} 
             { user &&  <LogoutButton />}
         </div>
     </div> 

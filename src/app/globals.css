@@ -6,6 +6,20 @@ body{
     background-color: #f7bac0;
 }
 
+main{
+    background:white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 25px;
+}
+
+.title {
+    margin-top: 0;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
 .row{
     display:flex;
 }
@@ -24,6 +38,7 @@ a:link, a:visited {
     border-radius: 5px;
     margin-bottom: 10px;
     background: white;
+    align-items: center;
 }
 
 
@@ -33,6 +48,7 @@ a:link, a:visited {
     text-decoration: none;
     color: #000;
     font-weight: bold;
+    display: flex
 }
 
 
@@ -40,17 +56,26 @@ a:link, a:visited {
     text-decoration: underline;
 }
 
-#navbar .username {
+#navbar .user-actions {
     margin-left: auto;
     font-weight: normal;
+
+}
+
+#navbar .username{
+    font-weight: normal;
+    margin-right: 20px;
+
 }
 
 .user-icon {
     color: #444;
     height: 20px;
-    top: 4px;
+    top: -2px;
     right: 4px;
     position: relative;
+   
+
 
 }
 
@@ -96,8 +121,7 @@ a:link, a:visited {
     flex-wrap: wrap;
     justify-content: flex-start;
     gap: 30px;
-    padding: 50px;
-    
+   
 }  
 
 #games .content {
@@ -174,3 +198,53 @@ a:link, a:visited {
 #game-page #left {
     margin-right: 20px;
 }
+
+.cart-icon {
+    margin-left: 5px;
+}
+
+#review-form {
+    background: #efefef;
+    padding: 20px;
+    padding-top: 5px;
+}
+
+#review-form form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#review-form textarea {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    resize: vertical;
+
+}
+
+#review-form input[type=submit] {
+    border: solid 2px black;
+    font-weight: bold;
+    padding: 10px;
+    text-transform: uppercase;
+    background: white;
+    width: 150px;
+    margin-left: auto;
+    margin-top: 10px;
+}
+
+.review {
+    background: #ededed;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.review .stars {
+    margin-left: auto;
+    margin-top: -10px;
+}
+
+

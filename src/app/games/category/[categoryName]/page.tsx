@@ -24,6 +24,9 @@ export default function Page({ params }) {
         }
     }
 
-    return <GameList games={games}  onClickAddToCart={onClickAddToCart} />
+    return <>
+        <h1 className='title'>{params.categoryName}</h1>
+        <GameList games={games}  onClickAddToCart={onClickAddToCart} />
+    </>
 
 }

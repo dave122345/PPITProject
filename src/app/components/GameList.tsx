@@ -6,9 +6,7 @@ import { FaCartPlus } from "react-icons/fa6";
 
   return (
     <div>
-      <div className="title">
-        <h1>Games</h1>
-      </div>
+   
       <div id='games'>
         {games.map((game) => (
           <div className='game-card' key={game.id} >
