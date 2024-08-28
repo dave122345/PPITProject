@@ -27,15 +27,17 @@ export default function Page({ params }) {
       <div id='left'>
         <img src={`/images/${game.image}`} />
       </div>
-      <div id='left'>
-        
+      <div id='right'>
         <div id='game-description'>
           <b>Game Description:</b>
           <div>
             {game.description}
           </div>
         </div>
-        <div id='game-price'>€{game.price}</div>
+        <div id='game-page-buy-actions'>
+          <div id='game-price'>€{game.price}</div>
+         </div>
+
       </div>
     </div>
 
