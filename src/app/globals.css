@@ -47,7 +47,6 @@ a:link, a:visited {
     margin-bottom: 10px;
     background: rgba(255,255,255, 0.8);
     backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
     align-items: center;
 }
 
