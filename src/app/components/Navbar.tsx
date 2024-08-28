@@ -1,7 +1,6 @@
 "use client"
 import Link from "next/link"
-import { useState, useEffect } from "react"
-import axios from "axios"
+
 import { LogoutButton } from "./LogoutButton"
 import { usePathname } from 'next/navigation'
 import {  FaCartShopping, FaUser  } from "react-icons/fa6";
