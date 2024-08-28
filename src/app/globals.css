@@ -6,6 +6,10 @@ body{
     background-color: #f7bac0;
     background: url(/images/background.webp);
 }
+
+#wrapper {
+    max-width: 1340px;
+    margin: 0 auto;
 }
 
 main{
