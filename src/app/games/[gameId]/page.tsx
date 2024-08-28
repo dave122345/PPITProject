@@ -1,4 +1,5 @@
 'use client'
+import { AddToCartBtn } from '@/app/components/AddToCartBtn';
 import { AverageRating } from '@/app/components/AverageRating';
 import { ReviewForm } from '@/app/components/ReviewForm';
 import { Reviews } from '@/app/components/Reviews';
@@ -36,7 +37,8 @@ export default function Page({ params }) {
         </div>
         <div id='game-page-buy-actions'>
           <div id='game-price'>€{game.price}</div>
-         </div>
+          <AddToCartBtn gameId={params.gameId} />
+        </div>
 
       </div>
     </div>
