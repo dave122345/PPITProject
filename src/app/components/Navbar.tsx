@@ -22,7 +22,6 @@ export function Navbar() {
     return <div id='navbar'>
       
             <NavLink href='/'>Home</NavLink>
-            <NavLink href='/games'>Games</NavLink>
             <NavLink href='/games/category/action'>Action</NavLink>
             <NavLink href='/games/category/rpg'>RPG</NavLink>
             <NavLink href='/games/category/simulation'>Simulation</NavLink>
