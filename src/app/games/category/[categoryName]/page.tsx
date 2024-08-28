@@ -16,13 +16,6 @@ export default function Page({ params }) {
         })();
     }, []);
 
-    async function onClickAddToCart(gameId) {
-
-        const { data } = await axios.post('/api/cart', { gameId });
-        if (data.error) {
-            alert(data.error);
-        }
-    }
 
     return <>
         <h1 className='title'>{params.categoryName}</h1>
