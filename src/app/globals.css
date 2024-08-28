@@ -22,6 +22,7 @@ main{
 
 .row{
     display:flex;
+    gap: 20px;
 }
 
 a:link, a:visited {
@@ -172,23 +173,31 @@ a:link, a:visited {
     padding: 20px;
 }
 
-#game-page {
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    background: white;
-
-}
 
 #game-page #game-title {
     font-size: 24pt;
     font-weight: bold;
+    margin-bottom: 20px;
 
 }
 
 #game-page img{
-    height: 500px;
     border-radius: 10px;
+    width: 350px;
+}
+#game-description {
+    background: #e9e9e9;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #0000005e;
+    margin-bottom: 20px;
+    white-space: pre-wrap;
+}
+
+#game-description b {
+    margin-bottom: 10px;
+    display: block;
+    font-size: 1.2em;
 }
 
 /* #game-page #left, #game-page #right {
@@ -196,7 +205,6 @@ a:link, a:visited {
 } */
 
 #game-page #left {
-    margin-right: 20px;
 }
 
 .cart-icon {
