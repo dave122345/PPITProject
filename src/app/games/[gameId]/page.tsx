@@ -19,7 +19,7 @@ export default function Page({ params }) {
   }, []);
  
 
-  if (!game.rating) {
+  if (!game.id) {
     return <div>Loading...</div>
   }
   return <div id='game-page'>
