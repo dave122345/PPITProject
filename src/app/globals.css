@@ -4,6 +4,8 @@ body{
     background: #f4f4f4;
     padding: 10px;
     background-color: #f7bac0;
+    background: url(/images/background.webp);
+}
 }
 
 main{
