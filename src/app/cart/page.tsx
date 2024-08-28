@@ -21,23 +21,19 @@ export default function Games() {
    
    return  <div>
   
-   <div className="title">
-   
-    <h1>Cart</h1>
+   <div className="page-title">
+        <h1>Cart</h1>
     </div>
     {games.error &&  <div className='error'>
         <span>{games.error}</span>
     </div>}
-     {!!games.length && <div id='games'>
+     {!!cartGames.data?.length && <div className='cart-items'>
 
         {games.map((game) => {
 
             return <div className='card'>
-                    <span className='game-title'>{game.title}</span>
-                    <span className='game-description'>{game.short_description}</span>
-                    <button className='add-to-cart' onClick={() => onClickRemoveFromCart(game.id)} >Remove From Cart</button>
-
-             </div>
+                <div className='cart-game-title'>{game.title}</div>
+                <div className='cart-game-price'>€{game.price}</div>
         })}
 
     

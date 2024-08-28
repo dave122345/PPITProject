@@ -298,3 +298,52 @@ a:link, a:visited {
 .normal {
     font-weight: normal;
 }
+#cart #games {
+    flex-direction: column;
+}
+
+#cart .card {
+    display: flex;
+    flex-direction: row;
+    background: #ececec;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    align-items: center;
+    justify-items: flex-start;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+/* .cart-game-thumb {
+    height: 100px;
+} */
+
+.cart-game-thumb img {
+    height: 100px;
+}
+
+.cart-game-title {
+    font-weight: bold;
+    font-size: 1.4em;
+    display: flex;
+    max-width: none;
+    flex-grow: 1;
+    padding-left: 20px;
+}
+
+.cart-game-description {
+    max-width: 200px;
+    display: flex;
+}
+
+.cart-game-price {
+    font-weight: normal;
+    font-size: 1.4em;
+    padding-right: 30px;
+}
+.cart-items {
+    display: flex;
+    flex-direction: column;
+}
+
