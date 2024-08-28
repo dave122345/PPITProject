@@ -32,11 +32,11 @@ export function Navbar() {
        
      
          <div className='user-actions'>
-            { !user &&   <NavLink href='/login'>Log-in</NavLink>}
-            { !user &&  <NavLink href='/signup'>Sign Up</NavLink>}
-            { user && <a className="username"><FaUser className="user-icon" />{user.data?.username}</a> }
-            { user &&  <NavLink href='/cart'>Cart<span className='normal'>&nbsp; [{cartItemCount}]</span> <FaCartShopping className='cart-icon'/></NavLink>} 
-            { user &&  <LogoutButton />}
+            { !user.data &&   <NavLink href='/login'>Log-in</NavLink>}
+            { !user.data &&  <NavLink href='/signup'>Sign Up</NavLink>}
+            { user.data && <a className="username"><FaUser className="user-icon" />{user.data?.username}</a> }
+            { user.data &&  <NavLink href='/cart'>Cart<span className='normal'>&nbsp; [{cartItemCount}]</span> <FaCartShopping className='cart-icon'/></NavLink>} 
+            { user.data &&  <LogoutButton />}
         </div>
     </div> 
     
