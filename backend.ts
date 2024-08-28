@@ -50,6 +50,13 @@ app.get('/api/ratings/:gameId', async (req, res) => {
 
 });
 
+app.post('/api/cart/checkout', async (req, res) => {
+  await db.query(`delete from cart where user_id = :user_id`, {
+    user_id: req.session.userId
+  })
+  res.json({success: true})
+})
+
 app.get('/api/reviews/:gameId', async (req, res) => {
   const [rows] = await db.query(`select content, username, rating, created_at from reviews
 inner join users on users.id = reviews.user_id  

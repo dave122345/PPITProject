@@ -1,5 +1,4 @@
 body{
-    
     font-family: Helvetica;
     background: #f4f4f4;
     padding: 10px;
@@ -20,6 +19,10 @@ main{
     padding: 25px;
 }
 
+button, .checkout-btn, .cart-action-button {
+    cursor: pointer !important;
+}
+
 .page-title {
     margin-top: 0;
     text-transform: uppercase;
@@ -27,10 +30,12 @@ main{
     margin-bottom: 20px;
 }
 
-.row{
+.row {
     display:flex;
     gap: 20px;
 }
+
+
 
 a:link, a:visited {
     color: #000;
@@ -83,9 +88,6 @@ a:link, a:visited {
     top: -2px;
     right: 4px;
     position: relative;
-   
-
-
 }
 
 #navbar .active {
@@ -142,6 +144,7 @@ a:link, a:visited {
 
 }
 
+
 .game-title {
     font-weight: bold;
     font-size: 18pt;
@@ -161,6 +164,8 @@ a:link, a:visited {
     background: white;
 
 }
+
+.cart-action-button {
     margin-top: auto;
     padding: 5px;
     background-color: green;;
@@ -199,7 +204,6 @@ a:link, a:visited {
     font-size: 24pt;
     font-weight: bold;
     margin-bottom: 20px;
-
 }
 
 #game-page img{
@@ -323,6 +327,7 @@ a:link, a:visited {
 .normal {
     font-weight: normal;
 }
+
 #cart #games {
     flex-direction: column;
 }
@@ -367,8 +372,50 @@ a:link, a:visited {
     font-size: 1.4em;
     padding-right: 30px;
 }
+
+#cart .cart-action-button {
+    background: red;
+    display: flex;
+    /* margin-left: auto; */
+    margin: 0;
+    padding: 10px;
+    font-size: 0.9em;
+}
+
 .cart-items {
     display: flex;
     flex-direction: column;
+}
+
+#subtotal {
+    display: flex;
+    margin-left: auto;
+    padding: 20px;
+    background: #ececec;
+    border-radius: 10px;
+    font-size: 1.4em;
+    flex-direction: column;
+}
+
+.checkout-btn {
+    padding: 10px;
+    border-radius: 4px;
+    background: green;
+    margin-left: auto;
+    margin-top: 10px;
+    color: white;
+    border: none;
+    font-size: 0.8em;
+}
+
+#thank-you {
+    font-weight: bold;
+    text-align: center;
+}
+
+#thank-you .return-to-home:link {
+    margin-top: 10px;
+    text-decoration: underline;
+    display: block;
 }
 

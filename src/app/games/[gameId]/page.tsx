@@ -39,7 +39,6 @@ export default function Page({ params }) {
           <div id='game-price'>€{game.price}</div>
           <AddToCartBtn gameId={params.gameId} />
         </div>
-
       </div>
     </div>
 
