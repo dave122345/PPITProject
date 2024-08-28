@@ -17,8 +17,7 @@ export function AverageRating({ gameId }) {
     }
 
     return <>
-        <b>rating: {rating}</b>
-        <ReactStars
+            <ReactStars
             count={5}
             value={rating}
             size={30}

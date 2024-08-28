@@ -5,20 +5,19 @@ import axios from "axios"
 import { LogoutButton } from "./LogoutButton"
 import { usePathname } from 'next/navigation'
 import {  FaCartShopping, FaUser  } from "react-icons/fa6";
+import { fetcher } from "../fetcher"
+import useSWR from 'swr'
+
 function NavLink({href, children}) {
     const pathname = usePathname()
     const active = pathname == href ? 'active' : ''
     return <Link href={href} className={active}>{children}</Link>
 }
 export function Navbar() {
-    const [user, setUser] = useState<any>(null)
-    useEffect(() => {
-        async function fetchUser() {
-            const {data} = await axios.get('/api/user')
-            setUser(data)
-        }
-        fetchUser()
-    }, [])
+    const user = useSWR('/api/user', fetcher)
+    const cartItems = useSWR('/api/cart', fetcher)
+
+    const cartItemCount = cartItems.data?.length || 0
 
     return <div id='navbar'>
       
@@ -35,8 +34,8 @@ export function Navbar() {
          <div className='user-actions'>
             { !user &&   <NavLink href='/login'>Log-in</NavLink>}
             { !user &&  <NavLink href='/signup'>Sign Up</NavLink>}
-            { user && <a className="username"><FaUser className="user-icon" />{user.username}</a> }
-            { user &&  <NavLink href='/cart'>Cart <FaCartShopping className='cart-icon'/></NavLink>} 
+            { user && <a className="username"><FaUser className="user-icon" />{user.data?.username}</a> }
+            { user &&  <NavLink href='/cart'>Cart<span className='normal'>&nbsp; [{cartItemCount}]</span> <FaCartShopping className='cart-icon'/></NavLink>} 
             { user &&  <LogoutButton />}
         </div>
     </div> 

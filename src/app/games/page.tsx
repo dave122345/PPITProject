@@ -16,17 +16,11 @@ export default function Games() {
         })();
     }, []);
 
-    async function onClickAddToCart(gameId) {
 
-        const { data } = await axios.post('/api/cart', { gameId });
-        if (data.error) {
-            alert(data.error);
-        }
-    }
 
     return <>
         <h1 className='title'>Games</h1>
        
-        <GameList games={games} onClickAddToCart={onClickAddToCart} />
+        <GameList games={games} />
     </>
 }
