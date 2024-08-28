@@ -42,7 +42,7 @@ export function Reviews({ gameId }) {
     return <>
         <h2>Game Reviews: </h2>
         {reviews.data.map(review => (
-            <ReviewItem review={review} />
+            <ReviewItem key={review.username} review={review} />
         ))}
     </>
 }
