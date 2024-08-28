@@ -41,8 +41,7 @@ export default function Page({ params }) {
       </div>
     </div>
 
-    {/* average rating */}
-    <p>Game overall rating</p>
+    <b>Game overall rating:</b>
     <AverageRating gameId={params.gameId} />
 
     <Reviews gameId={params.gameId} />
