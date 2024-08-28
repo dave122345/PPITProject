@@ -3,6 +3,7 @@ import useSWR, { useSWRConfig } from 'swr'
 import { fetcher } from '../fetcher'
 import ReactStars from "react-rating-stars-component";
 import Link from 'next/link';
+import { useState } from 'react';
 
 
 export function ReviewForm ({gameId, reviewSubmitted}) {
@@ -10,21 +11,17 @@ export function ReviewForm ({gameId, reviewSubmitted}) {
   const reviews = useSWR(`/api/reviews/${gameId}`, fetcher)
   const ourUserName = useSWR('/api/user', fetcher)
   const game = useSWR(`/api/games/${gameId}`, fetcher)
+  const [rating, setRating] = useState()
 
   const ourReview = reviews.data?.find(review => review.username == ourUserName.data?.username)
 
   async function submitReview (event) {
     event.preventDefault()
     const formData = new FormData(event.currentTarget)
-    const values = Object.fromEntries(formData)
+    const values: any = Object.fromEntries(formData)
+    values.rating = rating
     await axios.post(`/api/reviews/${gameId}`, values)
     mutate(`/api/reviews/${gameId}`)
-  }
-
-  async function onChangeRating(rating) {
-      const response = await axios.post('/api/ratings/' + gameId, {
-        rating
-      })
   }
 
   if (ourReview) {
@@ -40,8 +37,7 @@ export function ReviewForm ({gameId, reviewSubmitted}) {
       <h2>Write a review:</h2>
       <ReactStars
         count={5}
-        // value={game.data.rating}
-        onChange={onChangeRating}
+        onChange={setRating}
         size={30}
         activeColor="#ffd700"
         isHalf={true}

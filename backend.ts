@@ -42,7 +42,7 @@ app.get('/api/games/category/:category_name', async (req, res) => {
 })
 
 app.get('/api/ratings/:gameId', async (req, res) => {
-  const [rows] = await db.query(`select avg(rating) as average_rating from ratings where game_id = :gameId;`, {
+  const [rows] = await db.query(`select avg(rating) as average_rating from reviews where game_id = :gameId;`, {
     gameId: req.params.gameId,
 
   });
@@ -62,12 +62,13 @@ where game_id = :gameId;`,
 app.post('/api/reviews/:gameId', async (req, res) => {
   console.log(req.body)
   await db.query(`
-    insert into reviews (user_id, game_id, content)
-    value (:user_id, :game_id, :content)
+    insert into reviews (user_id, game_id, content, rating)
+    value (:user_id, :game_id, :content, :rating)
   `, {
     user_id: req.session.userId,
     game_id: req.params.gameId,
-    content: req.body.content
+    content: req.body.content,
+    rating: req.body.rating,
   })
   res.json({success: true})
 
