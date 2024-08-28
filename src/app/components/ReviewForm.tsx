@@ -2,6 +2,7 @@ import axios from 'axios'
 import useSWR, { useSWRConfig } from 'swr'
 import { fetcher } from '../fetcher'
 import ReactStars from "react-rating-stars-component";
+import Link from 'next/link';
 
 
 export function ReviewForm ({gameId, reviewSubmitted}) {
@@ -52,6 +53,15 @@ export function ReviewForm ({gameId, reviewSubmitted}) {
         </div>
         <input type='submit' value='submit'/>
       </form>
-    </div>
+      
+      {!ourUserName.data && 
+        <div id='review-form-overlay'>
+          <div className='inner'>
+            Please&nbsp;<Link href='/login'>sign in</Link>
+            &nbsp;to post a game review.
+          </div>
+        </div>
+      }
+  </div>
   )
 }

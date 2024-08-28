@@ -191,9 +191,9 @@ a:link, a:visited {
     border-radius: 10px;
 }
 
-#game-page #left, #game-page #right {
+/* #game-page #left, #game-page #right {
    
-}
+} */
 
 #game-page #left {
     margin-right: 20px;
@@ -207,12 +207,14 @@ a:link, a:visited {
     background: #efefef;
     padding: 20px;
     padding-top: 5px;
+    position: relative;
+    margin: 5px;
+    border-radius: 10px;
 }
 
 #review-form form {
     display: flex;
     flex-direction: column;
-
 }
 
 #review-form textarea {
@@ -221,7 +223,6 @@ a:link, a:visited {
     padding: 10px;
     box-sizing: border-box;
     resize: vertical;
-
 }
 
 #review-form input[type=submit] {
@@ -233,6 +234,34 @@ a:link, a:visited {
     width: 150px;
     margin-left: auto;
     margin-top: 10px;
+} 
+
+#review-form-overlay {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 9999;
+    border-radius: 10px;
+    display: flex;
+    backdrop-filter: blur(2px);
+}
+
+#review-form-overlay .inner {
+    display: flex;
+    color: white;
+    margin: auto;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+#review-form-overlay .inner a:link {
+    color: white;
+    text-decoration: underline;
+
+
 }
 
 .review {
