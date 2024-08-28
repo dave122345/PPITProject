@@ -170,13 +170,18 @@ a:link, a:visited {
     border-radius: 5px;
 }
 
-.add-to-cart svg {
+#game-page .cart-action-button svg,
+#games .cart-action-button svg {
     position: relative;
     top: 4px;
     left: 4px;
 }
 
-.add-to-cart[disabled] {
+#game-page .cart-action-button {
+    width: 153px;
+}
+
+.cart-action-button[disabled] {
     opacity: 0.5;
 
 }
